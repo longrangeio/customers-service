@@ -1,0 +1,15 @@
+[package]
+name = "customers-service"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+juniper = "0.15.10"
+juniper_actix = "0.4.0"
+
+actix-web = "4"
+actix-cors = "0.6.4"
+
+chrono = "0.4.23"
+fake = {version = "2.5", features = ["derive", "http", "uuid", "chrono"] }
+rand = "0.8"

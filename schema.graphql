@@ -1,0 +1,25 @@
+# Ecommerce customer
+type Customer {
+  id: String!
+  email: String!
+  firstName: String!
+  lastName: String!
+  addresses: [DeliveryAddress!]!
+}
+
+type Query {
+  customers: [Customer!]!
+  customerByEmail(email: String!): Customer!
+  customerById(id: String!): Customer!
+}
+
+# Customer physical address
+type DeliveryAddress {
+  id: String!
+  address: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  recipient: String!
+  country: String!
+}
