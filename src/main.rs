@@ -41,7 +41,7 @@ async fn graphql_route(
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
-
+    println!("starting...");
     let server = HttpServer::new(move || {
         App::new()
             .app_data(Data::new(schema()))

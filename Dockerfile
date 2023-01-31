@@ -1,16 +1,10 @@
-FROM dokken/ubuntu-22.04
-
-RUN apt-get update -y
-RUN apt-get upgrade -y
-RUN apt-get install cmake -y
-RUN apt-get install build-essential -y
-RUN apt-get install cargo -y
+FROM rust:1.67
 
 RUN mkdir /app
 COPY . /app
 
 WORKDIR /app
 
-RUN cargo build
+RUN cargo install --path .
 
-CMD ["cargo", "run", "--color=always", "--bin", "app"]
+CMD ["customers-service"]
